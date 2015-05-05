@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
+import java.net.SocketException;
 import javax.swing.JTextArea;
 
 class ChatServerThread implements Runnable {
@@ -32,6 +33,8 @@ class ChatServerThread implements Runnable {
             jtA.append("thread "+id+" asked to quit.\n");
             socket.close();
             streamIn.close();
+        } catch (SocketException ex) {
+            jtA.append("Thread socket closed.\n");
         } catch (IOException ex) {
             jtA.append("ERROR: problem with accepting the client.\n");
         }
