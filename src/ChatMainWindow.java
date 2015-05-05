@@ -1,9 +1,9 @@
-
-import javax.swing.text.DefaultCaret;
-
 // Server for Chat with GUI
 // Server is running in separate thread.
 // Clients are maintained by separate threads.
+// https://github.com/MilanKerslager/NetBeansGUI-ChatServer
+
+import javax.swing.text.DefaultCaret;
 
 public class ChatMainWindow extends javax.swing.JFrame {
     private final int sPort = 3333;
